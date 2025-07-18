@@ -14,14 +14,8 @@ docker build -t wg-wormhole .
 #Server
 
 docker run --rm -it \
-  --privileged --network host --device /dev/net/tun \
-  -v /etc/wireguard:/etc/wireguard \
-  -e WG_NETWORK=10.0.0.0/24 \
-  wg-wormhole send
+  --privileged --network host --device /dev/net/tun -v /etc/wireguard:/etc/wireguard -e WG_NETWORK=10.0.0.0/24 wg-wormhole send
 
 #Client
 
-docker run --rm -it \
-  --privileged --network host --device /dev/net/tun \
-  -v /etc/wireguard:/etc/wireguard \
-  wg-wormhole receive <wormhole-code>
+docker run --rm -it --privileged --network host --device /dev/net/tun -v /etc/wireguard:/etc/wireguard wg-wormhole receive <wormhole-code>
