@@ -9,9 +9,9 @@ A Dockerized WireGuard+Magic‑Wormhole helper that:
 
 docker build -t wg-wormhole .
 
-#Usage
+##Usage
 
-##Server
+#Server
 
 docker run --rm -it \
   --privileged --network host --device /dev/net/tun \
@@ -19,7 +19,7 @@ docker run --rm -it \
   -e WG_NETWORK=10.0.0.0/24 \
   wg-wormhole send
 
-##Client
+#Client
 
 docker run --rm -it \
   --privileged --network host --device /dev/net/tun \
